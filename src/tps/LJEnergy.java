@@ -1,16 +1,22 @@
-package energy;
+package tps;
 
 import java.util.*;
 
 public class LJEnergy implements Energy {
     
 	@Override
-        public double calcEnergy(double[] cart) {
+        public double calcEnergy(double[] cart) throws InputException {
+		int l = cart.length;
+		int N = l / 3; //number of atoms in the simulation cluster
+		if (l % 3 != 0) {
+			String message = "input cartesian cooridnates is not 3 * number of atoms";
+			throw new InputException(message);
+		}
 		return 0;
         }   
     
 	@Override
-        public double[] calcGradient(double[] cart) {
+        public double[] calcGradient(double[] cart) throws InputException {
 		int n = cart.length;
 		double[] force = new double[n];
 		double epsilon = 1e-6;
@@ -28,7 +34,7 @@ public class LJEnergy implements Energy {
         }   
 
 	@Override
-        public double[][] calcHession(double[] cart) {
+        public double[][] calcHession(double[] cart) throws InputException {
 		int n = cart.length;
 		double[][] hessian = new double[n][n];
 		double[] gradientf, gradientb;
