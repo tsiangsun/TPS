@@ -5,9 +5,9 @@ public class TEST {
 	public static void main(String[] args) {
 		MDMC mdmc = new MDMC();
 		double lengthx, lengthy, lengthz;
-		lengthx = 10.0;
-		lengthy = 10.0;
-		lengthz = 10.0;
+		lengthx = 5.0;
+		lengthy = 5.0;
+		lengthz = 5.0;
 		SimBox sb = new SimBox(lengthx, lengthy, lengthz);
 		int NAtom = 100;
 		double[] x = new double[NAtom];

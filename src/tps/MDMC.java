@@ -8,7 +8,7 @@ public class MDMC {
 		// to local minima
 		double e1, e2;
 		int n = cart.length;
-		double[] gradient = ene.calcGradient(cart);
+		double[] gradient;
 		double alpha = 0.1; // gradient descent step size
 		e1 = ene.calcEnergy(cart);
 		int step, NSTEP;
@@ -16,6 +16,7 @@ public class MDMC {
 		NSTEP = 1000;
 		do {
 			e2 = e1;
+			gradient = ene.calcGradient(cart);
 			for(int i = 0; i < n; i ++) {
 				cart[i] -= alpha * gradient[i];
 			}
@@ -26,6 +27,10 @@ public class MDMC {
 				throw new OptException(message);
 			}
 			else System.out.println("......... " + step + " ............. Energy " + e1 + " ........");
+			//update step size
+			for(int i = 0; i < n; i ++) {
+				alpha = Math.min(alpha, Math.abs((e1 - e2) / gradient[i] / n));
+			}
 		} while (Math.abs(e1 - e2) > 1e-6);					
 		System.out.println(".....Optimization converged in " + step + " ......");
 		return;
