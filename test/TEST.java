@@ -9,7 +9,7 @@ public class TEST {
 		lengthy = 5.0;
 		lengthz = 5.0;
 		SimBox sb = new SimBox(lengthx, lengthy, lengthz);
-		int NAtom = 100;
+		int NAtom = 4;
 		double[] x = new double[NAtom];
 		double[] y = new double[NAtom];
 		double[] z = new double[NAtom];

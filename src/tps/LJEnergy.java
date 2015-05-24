@@ -38,7 +38,7 @@ public class LJEnergy implements Energy {
         public double[] calcGradient(double[] cart) throws InputException {
 		int n = cart.length;
 		double[] force = new double[n];
-		double epsilon = 1e-6;
+		double epsilon = 1e-8;
 		double ene = calcEnergy(cart);
 		double eneif,eneib;
 		for(int i = 0; i < n; i ++) {
@@ -76,7 +76,7 @@ public class LJEnergy implements Energy {
 		double B = 4.0;
 		double rsquare = Math.pow(pi.pos.x - pj.pos.x, 2) + Math.pow(pi.pos.y - pj.pos.y, 2) + Math.pow(pi.pos.z - pj.pos.z, 2);
 		double r = Math.sqrt(rsquare);
-		double VLJ = A / Math.pow(r, 12) - B / Math.pow(r, 6);
+		double VLJ = (1.0 / Math.pow(r, 12.0) - 2.0 / Math.pow(r, 6.0));
 		return VLJ;
 	}
 
