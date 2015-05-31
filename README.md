@@ -15,10 +15,16 @@ after unziped jogamp-all-platforms.7z file, you need to copy jogl-all.jar, glueg
 you also need to add the lib folder in jogamp-all-platforms to your /Libarary/Java/Extension folder
 
 now you are ready to download the TPS package
-1. download the whole directory in to your local computer
-2. cd to the TPS director
-3. javac -d ../classes ../src/*.java (to compile the source files and put the *.class in classes folder)
-4. cd to test folder
-5. javac -d ../classes -cp ../classes TEST.java (to compile the test file)
-6. java -Djava.library.path=/Library/Java/Extensions/lib/macosx-universal/ -cp ../classes/ TEST (run the test)
+
+download the whole directory in to your local computer
+
+cd to the TPS director
+
+javac -d ../classes ../src/*.java (to compile the source files and put the *.class in classes folder)
+
+cd to test folder
+
+javac -d ../classes -cp ../classes TEST.java (to compile the test file)
+
+java -Djava.library.path=/Library/Java/Extensions/lib/macosx-universal/ -cp ../classes/ TEST (run the test)
 
