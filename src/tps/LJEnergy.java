@@ -1,6 +1,7 @@
 package tps;
 
 import java.util.*;
+import javax.vecmath.Color3f;
 
 public class LJEnergy implements Energy {
     
@@ -26,8 +27,12 @@ public class LJEnergy implements Energy {
 				Position posi = new Position(x[i], y[i], z[i]);
 				Position posj = new Position(x[j], y[j], z[j]);
 				double mass = 1.0;
-				Particle pi = new Particle(mass, posi);
-				Particle pj = new Particle(mass, posj);
+				double radius = 0.1;
+				float r, g, b;
+				r = 0; g = 0; b = 0;
+				Color3f color = new Color3f(r, g, b);
+				Particle pi = new Particle(mass, posi, radius, color);
+				Particle pj = new Particle(mass, posj, radius, color);
 				ene += LJ(pi, pj);
 			}
 		}

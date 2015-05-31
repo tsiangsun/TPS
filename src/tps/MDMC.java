@@ -54,7 +54,7 @@ public class MDMC {
 				throw new OptException(message);
 			}
 			else System.out.println(".......... " + step + " of size " + alpha + " Energy " + e1 + " and gnorm " + gnorm + " ...........");
-		} while (Math.abs(e1 - e2) > 1e-6 || gnorm > 1e-5);					
+		} while (Math.abs(e1 - e2) > 1e-6 || gnorm > 1e-4);					
 		System.out.println(".....Optimization converged in " + step + " ......");
 		System.out.println(".....Energy of .. " + e1 + " and gradient of ... " + gnorm + " ...");
 		return;

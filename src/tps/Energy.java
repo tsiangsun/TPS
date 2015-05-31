@@ -1,4 +1,6 @@
 package tps;
+import javax.vecmath.Color3f;
+
 public interface Energy {
 	//calculate energy from coordinates
 	public double calcEnergy (double[] cart) throws InputException;
@@ -8,30 +10,4 @@ public interface Energy {
 
 	//calculate hession
 	public double[][] calcHession(double[] cart) throws InputException;
-};
-
-
-
-
-class Particle {
-	public double mass;
-	public Position pos;
-	public Particle(double mass, Position pos) {
-		this.mass = mass;
-		this.pos = pos;
-	}
-}; 
-
-
-
-
-class Position {
-	public double x;
-	public double y;
-	public double z;
-	public Position(double x, double y, double z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
 };
